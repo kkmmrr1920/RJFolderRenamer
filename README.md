@@ -19,9 +19,13 @@ Windows 環境での禁止文字や重複対策も行っています。
 
 例:
 📂 作業フォルダ
+
 ┣ 📂 RJ123456
+
 ┣ 📂 RJ654321
-┗ 📄 script.ps1
+
+┗ 📄 RJFolderRenamer.ps1
+
 
 ### 3. PowerShell で実行
 PowerShellを起動し
