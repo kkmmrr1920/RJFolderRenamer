@@ -24,6 +24,8 @@ foreach ($folder in $folders) {
             # HTML 内から <h1 id="work_name">作品名</h1> を抜き出す
             if ($html -match '<h1[^>]*id="work_name"[^>]*>(.*?)</h1>') {
                 # タイトルを HTML デコード（&#039; → ' など）して整形
+                Add-Type -AssemblyName System.Web
+                $title = [System.Web.HttpUtility]::HtmlDecode($matches[1]).trim()
             } else {
                 Write-Host "タイトルが取得できません: $rj"
                 continue
@@ -43,5 +45,8 @@ foreach ($folder in $folders) {
             # エラー発生時の処理
             Write-Host "⚠️ 失敗: $rj $($_.Exception.Message)"
         }
+
+        # サーバー負荷を避けるために 1 秒待機
+        Start-Sleep -Seconds 1
     }
 }
