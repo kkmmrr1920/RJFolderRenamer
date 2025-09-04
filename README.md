@@ -18,17 +18,19 @@ Windows 環境での禁止文字や重複対策も行っています。
 - RJ番号（例: `RJ123456`）が含まれる対象フォルダと **同じ場所** に `RJFolderRenamer.ps1` を置きます。
 
 例:
+```
 📂 作業フォルダ
-
 ┣ 📂 RJ123456
-
 ┣ 📂 RJ654321
-
 ┗ 📄 RJFolderRenamer.ps1
-
+```
 
 ### 3. PowerShell で実行
 PowerShellを起動し
 対象フォルダ（`RJFolderRenamer.ps1` がある場所）に移動して実行します。
 
-例：PS F:\Downloads> ./RJFolderRenamer.ps1
+例：
+```
+PS F:\> cd Downloads
+PS F:\Downloads> ./RJFolderRenamer.ps1
+```
